@@ -2,9 +2,8 @@ include "biblio-standoc.rnc" {
 
 BibDataExtensionType =
   attribute schema-version { text }?,
-        doctype, docsubtype?, horizontal?, function?, editorialgroup, ics*, structuredidentifier,
-        stagename?, updates_document_type?, accessibility-color-inside?, price-code?,
-        cen-processing?, secretary?, interest-to-committees?, tc-sc-officers-note?
+        doctype, docsubtype?, editorialgroup, ics*, structuredidentifier,
+        stagename?, coverimages*
 
 bdate = element date {
   attribute type { ( BibliographicDateType | text ) },
@@ -25,12 +24,15 @@ organization =
 }
 
 DocumentType =
-     "international-standard" | "technical-specification" |
-     "technical-report" | "publicly-available-specification" |
-    "international-workshop-agreement" | "guide" | "industry-technical-agreement" |
-    "system-reference-deliverable"
+     "british-standard" | "draft-for-development" | "published-document" |
+     "privately-subscribed-standard" | "publicly-available-specification" |
+     "flex-standard" | "international-standard" | "technical-specification" |
+     "technical-report" | "guide" | "international-workshop-agreement" |
+     "industry-technical-agreement" | "standard" | "european-workshop-agreement" |
+     "fast-track-standard"
 
-DocumentSubtype = "specification" | "method-of-test" | "vocabulary" | "code-of-practice"
+DocumentSubtype = "specification" | "method-of-test" | "method-of-specifying" |
+                  "vocabulary" | "code-of-practice"
 
 structuredidentifier =
   element structuredidentifier {
@@ -81,11 +83,5 @@ stagename = element stagename {
   text
 }
 
-function = element function { "emc" | "safety" | "environment" | "quality-assurance" }
-accessibility-color-inside = element accessibility-color-inside { xsd:boolean }
-price-code = element price-code { text }
-cen-processing = element cen-processing { xsd:boolean }
-secretary = element secretary { text }
-interest-to-committees = element interest-to-committees { text }
-tc-sc-officers-note = element tc-sc-officers-note { BasicBlock* }
+coverimages = element coverimages { image+ }
 
