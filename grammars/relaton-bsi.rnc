@@ -29,7 +29,7 @@ DocumentType =
      "flex-standard" | "international-standard" | "technical-specification" |
      "technical-report" | "guide" | "international-workshop-agreement" |
      "industry-technical-agreement" | "standard" | "european-workshop-agreement" |
-     "fast-track-standard"
+     "fast-track-standard" | "expert-commentary"
 
 DocumentSubtype = "specification" | "method-of-test" | "method-of-specifying" |
                   "vocabulary" | "code-of-practice"
