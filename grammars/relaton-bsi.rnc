@@ -18,8 +18,6 @@ element on { ISO8601Date | "--" | "–" }
 }
 
 
-organization = element organization { OrganizationType | IsoOrganizationType }
-
 DocumentType =
      "british-standard" | "draft-for-development" | "published-document" |
      "privately-subscribed-standard" | "publicly-available-specification" |
@@ -80,6 +78,3 @@ stagename = element stagename {
   text
 }
 
-
-IsoOrganizationType =
-    technical-committee?, subcommittee?, workgroup?, secretariat?
